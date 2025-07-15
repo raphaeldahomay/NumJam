@@ -19,8 +19,24 @@ or
 by following these lines of code:
 
 ```bash
+# 1. Clone the repository
+git clone https://github.com/yourusername/numjam.git
+cd numjam
 
+# 2. (Optional but recommended) Create and activate a virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
+# 3. Install Python backend dependencies
+pip install -r requirements.txt
+
+# 5. Run the Flask app
+export FLASK_APP=app.py       # On Windows: set FLASK_APP=app.py
+export FLASK_ENV=development  # Enables hot reloading
+flask run
+
+# 6. Open in browser
+# Visit http://127.0.0.1:5000 in your browser
 ```
 
 ## Tech Stack
@@ -28,4 +44,4 @@ by following these lines of code:
 - Backend: Flask
 - Database: SQLite 
 
-** Written and fully developed by Raphael Dahomay **
+**Written and fully developed by Raphael Dahomay**
