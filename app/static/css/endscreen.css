@@ -1,0 +1,58 @@
+#end-screen {
+background-color: white;
+padding: 2rem;
+border-radius: 0.5rem;
+box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+width: 100%;
+max-width: 500px;
+height: 550px;
+display: flex;
+text-align: center;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+gap: 2rem;
+}
+
+#end-screen h2 {
+font-size: 2rem;
+font-weight: bold;
+color: #1d4ed8;
+margin-bottom: 1rem;
+}
+
+#final-score {
+font-size: 1.25rem;
+margin: 0.5rem 0;
+font-weight: bold;
+}
+
+#personal-best,
+#personal-spread {
+font-size: 1.125rem;
+color: #374151;
+margin: 0.25rem 0;
+}
+
+.buttons {
+gap: 20px;
+}
+
+#end-screen button {
+background-color: #facc15;
+color: black;
+padding: 0.5rem 1.5rem;
+border: none;
+border-radius: 0.375rem;
+cursor: pointer;
+transition: background-color 0.3s;
+margin-top: 1rem;
+font-size: 1rem;
+}
+
+#end-screen button:hover {
+background-color: #1e40af;
+color: white;
+cursor: pointer;
+}
+  

@@ -1,0 +1,71 @@
+@import url('./topbar.css');
+@import url('./startscreen.css');
+@import url('./gamescreen.css');
+@import url('./login.css');
+@import url('./signup.css');
+@import url('./endscreen.css');
+@import url('./responsiveness.css');
+
+/* Reset and globals */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  font-family: sans-serif;
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.hidden {
+    display: none !important;
+  }
+
+.outlined-text {
+color: white;
+-webkit-text-stroke: 0.9px black;
+}
+
+.floating-word {
+position: absolute;
+left: 50%;
+top: 60%;
+transform: translateX(-50%);
+font-size: 2rem;
+font-weight: bold;
+color: gold;
+animation: floatUp 2.5s ease-out forwards;
+pointer-events: none;
+z-index: 100;
+}
+
+@keyframes floatUp {
+0% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+100% {
+    opacity: 0;
+    transform: translate(-50%, -100px);
+}
+}
+
+.feedback {
+font-weight: bold;
+transition: color 0.3s;
+}
+
+.text-green {
+color: green;
+}
+
+.text-red {
+color: red;
+}

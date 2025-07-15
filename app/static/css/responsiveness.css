@@ -1,0 +1,24 @@
+@media (max-width: 480px) {
+    #start-screen,
+    #game-screen,
+    #login-form,
+    #signup-form,
+    #end-screen {
+      padding: 1rem;
+      font-size: 0.95rem;
+    }
+  
+    h1.title,
+    h2.subtitle {
+      font-size: 1.25rem;
+    }
+  
+    #top-bar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .auth-buttons {
+      margin-top: 0.5rem;
+    }
+  }  

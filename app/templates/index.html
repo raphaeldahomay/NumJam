@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NumJam</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}?v=2">
+  <link rel="icon" href="assets/images/favicon.png" />
+</head>
+
+<body class="page">
+  <!-- 🧭 Top bar -->
+  <div id="top-bar">
+    <div class="auth-buttons">
+      <button id="login-btn">Log In</button>
+      <button id="signup-btn">Sign Up</button>
+      <button id="logout-btn" class="hidden">Log Out</button>
+    </div>
+  </div>
+
+  <!-- 🏠 Main content -->
+  <div id="start-screen" class="screen"> <!-- put back "screen" after -->
+    <h1 class="title">NumJam</h1>
+    <div id="high-score-display">Loading high scores...</div>
+
+    <!-- Difficulty Selection -->
+    <div class="form-group">
+      <label for="difficulty">Choose Difficulty:</label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
+
+    <!-- Negative Number Toggle -->
+    <div id="neg-or-not" class="form-group">
+      <input type="checkbox" id="allowNegatives" />
+      <label for="allowNegatives">Allow Negative Numbers</label>
+    </div>
+
+    <!-- Start Button -->
+    <button id="start-btn" class="btn-primary">Start Game</button>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="game-screen" class="hidden">
+    <h2 class="subtitle">Solve the Problem</h2>
+
+    <div class="game-info">
+      <div id="timer-display">Time: 60s</div>
+      <div id="lives-display">Lives: 3</div>
+    </div>
+
+    <div id="problem" class="problem-display"></div>
+
+    <input type="number" id="answer-input" placeholder="Your answer" onfocus="this.placeholder=''" onblur="this.placeholder='Your answer'"/>
+
+    <button id="submit-btn" class="btn-secondary">Submit</button>
+
+    <div id="feedback"></div>
+    <div id="score-display" class="score-display">Score: 0</div>
+
+    <div id="score-appeal" class="outlined-text floating-word hidden">Score!</div>
+    <div id="NumJam" class="outlined-text floating-word hidden">NumJam!</div>
+  </div>
+
+  <!-- Login Form -->
+  <div id="login-form" class="hidden">
+    <input id="login-username" type="text" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" required />
+    <input id="login-mdp" type="password" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" required />
+    <button id="login-submit-btn" type="button">Log In</button>
+    <button id="back-btn-l">Back</button>
+  </div>
+
+  <!-- Signup Form -->
+  <div id="signup-form" class="hidden">
+    <input id="signup-username" type="text" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" required />
+    <input id="signup-email" type="email" placeholder="Email" onfocus="this.placeholder=''" onblur="this.placeholder='Email'" required />
+    <input id="signup-mdp" type="password" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" required />
+    <button id="signup-submit-btn" type="button">Sign Up</button>
+    <button id="back-btn-s">Back</button>
+  </div>
+
+  <!-- End Screen -->
+  <div id="end-screen" class="hidden">
+    <h2 class="subtitle">Game Over</h2>
+    <p id="final-score" class="final-score"></p>
+    <p id="personal-best"></p>
+    <p id="personal-spread"></p>
+    <div class="buttons">
+      <button id="play-again-btn" class="btn-primary">Play Again</button>
+      <button id="change-d-btn" class="btn-primary">Change Difficulty</button>
+    </div>
+  </div>
+
+  <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
+
+  

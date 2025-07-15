@@ -1,0 +1,73 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+.env.*  # If you have env-specific configs
+
+# Flask cache files
+instance/
+*.db
+*.sqlite3
+*.sqlite
+
+# Node dependencies (if using npm for frontend)
+node_modules/
+dist/
+build/
+*.log
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# Editor swap files / temp
+*.swp
+*~
+
+# Coverage and testing
+.coverage
+htmlcov/
+coverage.xml
+
+# Static/generated assets
+*.bak
+*.tmp
+
+# Compiled JS/CSS (if using a bundler)
+*.bundle.js
+*.min.js
+*.min.css
+
+# Personal or config files
+config.py
+credentials.json
+*.key
+*.pem
+
+# __pycache__ in subfolders
+**/__pycache__/
+
+# Debugging logs
+*.log
+
+# Local SQLite database backups
+*.db-journal
+*.sql
+*.sqlite3-journal
+
+# Frontend storage (if using local builds)
+frontend/dist/
+frontend/node_modules/
+
+# Python egg
+*.egg-info/
+.eggs/
+
+# Any python files
+manage_db.py
