@@ -31,27 +31,51 @@ function randInt(min, max) {
         break;
     }
   
-    op = ops[Math.floor(Math.random() * ops.length)];
-    a = previousAnswer !== null ? previousAnswer : randInt(min, max);
-    do {
-      b = randInt(min, max);
-    } while (b === lastB); // Ensure b is different from lastB
-    lastB = b; // Store last b for potential reuse
+    let op, a, b, result;
+    let attempts = 0;
   
-    if (op === '÷') {
-      let attempts = 0;
-      while ((b === 0 || a % b !== 0) && attempts < 20) {
-        b = randInt(min === 0 ? 1 : min, max);
-        attempts++;
+    do {
+      op = ops[Math.floor(Math.random() * ops.length)];
+      a = previousAnswer !== null ? previousAnswer : randInt(min, max);
+      
+      do {
+        b = randInt(min, max);
+      } while (b === lastB); // Ensure b is different from lastB
+      
+      lastB = b;
+  
+      // Handle division safely
+      if (op === '÷') {
+        let tries = 0;
+        while ((b === 0 || a % b !== 0) && tries < 20) {
+          b = randInt(min === 0 ? 1 : min, max);
+          tries++;
+        }
+        if (b === 0 || a % b !== 0) continue; // Skip to next loop
       }
-      // If still invalid after 20 attempts, just pick a new problem
-      if (b === 0 || a % b !== 0) {
-        return generateProblem(difficulty, allowNegatives, previousAnswer);
+  
+      // Calculate the result
+      switch (op) {
+        case '+': result = a + b; break;
+        case '-': result = a - b; break;
+        case '×': result = a * b; break;
+        case '÷': result = b !== 0 ? a / b : null; break;
       }
+  
+      attempts++;
+      // If allowNegatives is false, retry if result is negative
+    } while ((!allowNegatives && result < 0) && attempts < 30);
+  
+    // Fallback: If still no valid problem, just force a safe one
+    if (!allowNegatives && result < 0) {
+      a = randInt(1, max);
+      b = randInt(1, max);
+      op = '+';
+      result = a + b;
     }
   
     return { a, b, op };
-}
+  }
 
 // Function to display the current problem in the UI
 export function displayProblem({ a, b, op }) {
