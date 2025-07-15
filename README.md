@@ -41,7 +41,7 @@ flask run
 
 ## Tech Stack
 - Frontend: HTML, CSS, JavaScript
-- Backend: Flask
+- Backend: Flask, Python
 - Database: SQLite 
 
-**Written and fully developed by Raphael Dahomay**
+**Written and fully developed by Raphael Dahomay** 🥷
