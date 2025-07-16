@@ -2,7 +2,7 @@
 background-color: white;
 padding: 2rem;
 border-radius: 0.5rem;
-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+box-shadow: 0 1px 4px rgba(231, 231, 231, 1);
 width: 100%;
 max-width: 500px;
 height: 550px;
@@ -11,7 +11,8 @@ text-align: center;
 align-items: center;
 justify-content: center;
 flex-direction: column;
-gap: 2rem;
+gap: 1.3rem;
+margin-top: 35px;
 }
 
 #start-screen .title {
@@ -24,6 +25,8 @@ margin-bottom: 1rem;
 #high-score-display {
 margin-bottom: 1rem;
 line-height: 25px;
+border: 1px solid #d1d5db;
+padding: 12px;
 }
 
 #difficulty,
