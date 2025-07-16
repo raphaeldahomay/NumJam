@@ -12,7 +12,7 @@ A fast-paced arithmetic game where every answer becomes your next challenge!
 - Input and output are inside ℝ (integer)
 
 ## Installation
-You can try NumJam directly with this link: (Numjam.com)[]
+You can try NumJam directly with this link: (Numjam.com)[https://numjam.onrender.com/]
 
 or
 
