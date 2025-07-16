@@ -45,7 +45,6 @@ coverage.xml
 *.min.css
 
 # Personal or config files
-config.py
 credentials.json
 *.key
 *.pem
