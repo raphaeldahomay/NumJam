@@ -80,25 +80,19 @@
     }
   
     .auth-buttons {
-      margin-top: 0.5rem;
+      margin-top: 0;
       gap: 0.5rem;
       margin-left: 0;
     }
 
     #top-bar button {
-        margin-top: 10px;
         margin-left: 0;
     }
 
     #top-bar {
         display: flex;
-        justify-content: space-between;    
-        height: 50px;
-        flex-direction: row;
-        width: 80px;
-        left: 0;
-        height: 100%;
         align-items: center;
-        position: fixed;
-    }  
+        justify-content: center;    
+        height: 50px;
+    }
 }
