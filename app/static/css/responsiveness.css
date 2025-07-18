@@ -10,7 +10,7 @@
 
     #start-screen, #game-screen, #end-screen {
         width: 100%;
-        max-width: 350px;
+        max-width: 320px;
         height: 500px; 
         gap: 1rem;
     } 
@@ -57,14 +57,17 @@
         width: 600px;
         display: flex;
         flex-direction: row;
+        justify-content: center;
+        align-items: center;
         font-size: 0.7rem;
+        gap: 10px;
     }
 
     #start-screen, #game-screen, #end-screen {
         width: 100%;
         max-width: 650px;
-        height: 350px; 
-        gap: 0.5rem;
+        height: 370px; 
+        gap: 0.3rem;
     } 
 
     #personal-best,

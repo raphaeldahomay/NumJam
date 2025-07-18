@@ -26,8 +26,8 @@ function randInt(min, max) {
         break;
       case "hard":
         ops = ['+', '-', '×', '÷', '÷']; // ÷ more likely
-        max = 20;
-        min = allowNegatives ? -20 : 0;
+        max = 40;
+        min = allowNegatives ? -40 : 0;
         break;
     }
   
@@ -37,29 +37,33 @@ function randInt(min, max) {
     do {
       op = ops[Math.floor(Math.random() * ops.length)];
       a = previousAnswer !== null ? previousAnswer : randInt(min, max);
-      
+    
       do {
         b = randInt(min, max);
-      } while (b === lastB); // Ensure b is different from lastB
-      
+      } while (b === lastB);
+    
       lastB = b;
-  
-      // Handle division safely
+    
+      // Ensure safe division
       if (op === '÷') {
         let tries = 0;
-        while ((b === 0 || a % b !== 0) && tries < 20) {
+        while (
+          b === 0 ||                        // Can't divide by 0
+          a % b !== 0 ||                    // Must be divisible
+          a / b !== Math.floor(a / b)       // Must be exact integer division
+        ) {
           b = randInt(min === 0 ? 1 : min, max);
           tries++;
+          if (tries > 20) continue;        // Bail if too many retries
         }
-        if (b === 0 || a % b !== 0) continue; // Skip to next loop
       }
-  
-      // Calculate the result
+    
+      // Calculate result
       switch (op) {
         case '+': result = a + b; break;
         case '-': result = a - b; break;
         case '×': result = a * b; break;
-        case '÷': result = b !== 0 ? a / b : null; break;
+        case '÷': result = a / b; break; // Now guaranteed to be integer
       }
   
       attempts++;

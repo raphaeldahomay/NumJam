@@ -2,7 +2,8 @@
 background-color: white;
 padding: 2rem;
 border-radius: 0.5rem;
-box-shadow: 0 1px 4px rgba(231, 231, 231, 1);
+box-shadow: 0 1px 10px rgb(236, 235, 235);
+border: 2px solid #000000;
 width: 100%;
 max-width: 500px;
 height: 550px;
@@ -12,7 +13,7 @@ align-items: center;
 justify-content: center;
 flex-direction: column;
 gap: 2rem;
-margin-top: 35px;
+margin-top: 50px;
 }
 
 #end-screen h2 {
